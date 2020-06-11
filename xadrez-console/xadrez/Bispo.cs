@@ -1,4 +1,5 @@
-﻿using tabuleiro;
+﻿using System;
+using tabuleiro;
 namespace xadrez
 {
     class Bispo : Peca
@@ -33,7 +34,8 @@ namespace xadrez
                 {
                     break;
                 }
-                pos.definirValores(pos.linha - 1, posicao.coluna + 1);
+                pos.definirValores(pos.linha - 1, pos.coluna - 1);
+              
             }
 
             //NE
@@ -46,6 +48,7 @@ namespace xadrez
                     break;
                 }
                 pos.definirValores(pos.linha - 1, pos.coluna + 1);
+                
             }
 
             //SE
@@ -58,6 +61,7 @@ namespace xadrez
                     break;
                 }
                 pos.definirValores(pos.linha + 1, pos.coluna + 1);
+             
             }
 
             //So
@@ -69,9 +73,12 @@ namespace xadrez
                 if (tab.peca(pos) != null && tab.peca(pos).cor != cor)
                 {
                     break;
+
                 }
                 pos.definirValores(pos.linha + 1, pos.coluna - 1);
+   
             }
+  
             return mat;
         }
 
